@@ -167,5 +167,20 @@ public class Esercizi1 {
 		}
 		return result;
 	}
+	
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Inserire numero di caratteri che si vuole inserire");
+			int caratteri = s.nextInt();
+			System.out.println("Inserire caratteri");
+			for (int j = 0; j < caratteri; j++) {
+				char c = s.next().charAt(0);
+				System.out.println(c);
+			}
+		}
+		s.close();
+
+	}
 
 }
