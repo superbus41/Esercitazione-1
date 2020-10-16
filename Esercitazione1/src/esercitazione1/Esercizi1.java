@@ -185,73 +185,88 @@ public class Esercizi1 {
 	public static void main(String[] args) {
 		
 		Scanner s = new Scanner(System.in);
+		int n;
 		int[] arr;
 		int[][] mat;
 		String frase;
 		String[] str1, str2;
-
-		System.out.println("metodo pari/dispari");
-		arr = getInputInt(s);
-		PariDispari(arr);
 		
-		System.out.println("metodo primo/ultimo");
-		arr = getInputInt(s);
-		FirstLast(arr);
+		System.out.println("scegliere categoria esercizi:\n1. Array\n2. Stringhe\n3. Cicli\n4. Altri");
+		n = s.nextInt();
 		
-		System.out.println("metodo tre di fila");
-		arr = getInputInt(s);
-		TreDiFila(arr);
+		switch(n) {
 		
-		System.out.println("metodo stessa sequenza");
-		str1 = getInputString(s);
-		str2 = getInputString(s);
-		StessaSequenza(str1, str2);
-		
-		System.out.println("metodo inverti stringa\ndigitare stringa da invertire");
-		frase = s.next();
-		InvertiStampa(frase);
-		
-		System.out.println("metodo stampa vocali\ndigitare stringa da cui ricavare le vocali");
-		frase = s.next();
-		StampaVocali(frase);
-		
-		System.out.println("metodo somma maiuscole");
-		str1 = getInputString(s);
-		SommaMaiuscole(str1);
-		
-		System.out.println("metodo tutti pari");
-		arr = getInputInt(s);
-		TuttiPari(arr);
-		
-		System.out.println("metodo media multipli di 3");
-		arr = getInputInt(s);
-		MediaMultipliTre(arr);
-
-		System.out.println("metodo di ordinamento");
-		arr = getInputInt(s);
-		BubbleSort(arr);
-		
-		System.out.println("metodo palindroma\ndigitare stringa che si vuole controllare");
-		frase = s.next();
-		Palindroma(frase);
-		
-		System.out.println("metodo di Fibonacci");
-		Fibonacci();
-		
-		System.out.println("metodo di trasposizione matrice");
-		mat = getInputMatrix(s);
-		Trasposta(mat);
-		
-		for (int i = 0; i < 5; i++) {
-			System.out.println("Inserire numero di caratteri che si vuole inserire");
-			int caratteri = s.nextInt();
-			System.out.println("Inserire caratteri");
-			for (int j = 0; j < caratteri; j++) {
-				char c = s.next().charAt(0);
-				System.out.println(c);
-			}
+			case 1:System.out.println("metodo pari/dispari");
+				arr = getInputInt(s);
+				PariDispari(arr);
+				
+				System.out.println("metodo primo/ultimo");
+				arr = getInputInt(s);
+				FirstLast(arr);
+				
+				System.out.println("metodo tre di fila");
+				arr = getInputInt(s);
+				TreDiFila(arr);
+				
+				System.out.println("metodo stessa sequenza");
+				str1 = getInputString(s);
+				str2 = getInputString(s);
+				StessaSequenza(str1, str2);
+				
+				break;
+				
+			case 2: System.out.println("metodo inverti stringa\ndigitare stringa da invertire");
+				frase = s.next();
+				InvertiStampa(frase);
+				
+				System.out.println("metodo stampa vocali\ndigitare stringa da cui ricavare le vocali");
+				frase = s.next();
+				StampaVocali(frase);
+				
+				System.out.println("metodo somma maiuscole");
+				str1 = getInputString(s);
+				SommaMaiuscole(str1);
+				
+				break;
+			
+			case 3:	System.out.println("metodo tutti pari");
+				arr = getInputInt(s);
+				TuttiPari(arr);
+				
+				System.out.println("metodo media multipli di 3");
+				arr = getInputInt(s);
+				MediaMultipliTre(arr);
+	
+				System.out.println("metodo di ordinamento");
+				arr = getInputInt(s);
+				BubbleSort(arr);
+			
+				break;
+			
+			case 4:	System.out.println("metodo palindroma\ndigitare stringa che si vuole controllare");
+				frase = s.next();
+				Palindroma(frase);
+				
+				System.out.println("metodo di Fibonacci");
+				Fibonacci();
+				
+				System.out.println("metodo di trasposizione matrice");
+				mat = getInputMatrix(s);
+				Trasposta(mat);
+				
+				for (int i = 0; i < 5; i++) {
+					System.out.println("Inserire numero di caratteri che si vuole inserire");
+					int caratteri = s.nextInt();
+					System.out.println("Inserire caratteri");
+					for (int j = 0; j < caratteri; j++) {
+						char c = s.next().charAt(0);
+						System.out.println(c);
+					}
+				}
+				
+				break;	
 		}
-		
+
 		s.close();
 	}
 	
