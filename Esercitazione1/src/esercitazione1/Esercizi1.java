@@ -225,7 +225,7 @@ public class Esercizi1 {
 				StampaVocali(frase);
 				
 				System.out.println("metodo somma maiuscole");
-				str1 = getInputStringSpecial(s);
+				str1 = getInputString(s);
 				SommaMaiuscole(str1);
 				
 				break;
@@ -287,31 +287,22 @@ public class Esercizi1 {
 	//supporto all'input di stringhe
 	static String[] getInputString(Scanner s) {
 		int n;
+		String buffer;
 		String[] str;
 		
 		System.out.println("Digitare il numero di stringhe che si vuole inserire");
 		n = s.nextInt();
+		s.nextLine();
 		str = new String[n];
 		System.out.println("Inserire le stringhe una alla volta");
-		for (int i = 0; i < n; i++)
-			str[i] = s.next();
+		for (int i = 0; i < n; i++) {
+			if ((buffer = s.nextLine()).isBlank())
+				buffer = "";
+			str[i] = buffer;
+		}
 		return str;
 	}
-	
-	static String[] getInputStringSpecial(Scanner s) {
-		int n;
-		String[] str;
 		
-		System.out.println("Digitare il numero di stringhe che si vuole inserire");
-		n = s.nextInt();
-		str = new String[n+1];
-		System.out.println("Inserire le stringhe una alla volta");
-		for (int i = 0; i < n; i++)
-			str[i] = s.next();
-		str[n] = "";
-		return str;
-	}
-	
 	
 	static int[][] getInputMatrix(Scanner s) {
 		int n, m;
