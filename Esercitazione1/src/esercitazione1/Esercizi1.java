@@ -149,11 +149,11 @@ public class Esercizi1 {
 	static boolean Palindroma(String s) {
 		for (int i = 0; i < s.length()/2; i++) {
 			if(s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-				System.out.println("stringa palindroma");
+				System.out.println("stringa non palindroma");
 				return false;
 			}
 		}
-		System.out.println("stringa non palindroma");
+		System.out.println("stringa palindroma");
 		return true;	
 	}
 	
@@ -167,6 +167,7 @@ public class Esercizi1 {
 			first = second;
 			second = current;
 		}
+		System.out.println();
 	}
 	
 	//traspone matrice
@@ -224,7 +225,7 @@ public class Esercizi1 {
 				StampaVocali(frase);
 				
 				System.out.println("metodo somma maiuscole");
-				str1 = getInputString(s);
+				str1 = getInputStringSpecial(s);
 				SommaMaiuscole(str1);
 				
 				break;
@@ -277,7 +278,7 @@ public class Esercizi1 {
 		
 		System.out.println("Digitare il numero di valori che si vuole inserire");
 		n = s.nextInt();
-		arr = new int[n];
+		arr = new int[n+1];
 		System.out.println("Inserire i valori uno alla volta");
 		for (int i = 0; i < n; i++)
 			arr[i] = s.nextInt();
@@ -296,6 +297,21 @@ public class Esercizi1 {
 			str[i] = s.next();
 		return str;
 	}
+	
+	static String[] getInputStringSpecial(Scanner s) {
+		int n;
+		String[] str;
+		
+		System.out.println("Digitare il numero di stringhe che si vuole inserire");
+		n = s.nextInt();
+		str = new String[n+1];
+		System.out.println("Inserire le stringhe una alla volta");
+		for (int i = 0; i < n; i++)
+			str[i] = s.next();
+		str[n] = "";
+		return str;
+	}
+	
 	
 	static int[][] getInputMatrix(Scanner s) {
 		int n, m;
